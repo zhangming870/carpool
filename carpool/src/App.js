@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Sidebar from "react-sidebar";
+import { Jumbotron, Container } from 'react-bootstrap';
+import Bigarea from './components/bigarea/Bigarea'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+
+
+        <Jumbotron fluid>
+          <Container>
+            <h1>Fluid jumbotron</h1>
+            <p>
+              This is a modified jumbotron that occupies the entire horizontal space of
+              its parent.
+            </p>
+          </Container>
+        </Jumbotron>
+        <Bigarea></Bigarea>
+
+
+
+
+
+      </div>
+
+    )
+  }
 }
 
 export default App;
