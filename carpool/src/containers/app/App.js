@@ -5,28 +5,25 @@ import { Jumbotron, Container } from 'react-bootstrap';
 import Bigarea from '../../components/bigarea/Bigarea'
 
 import {connect} from 'react-redux'
-import {addone} from '../../redux/actions'
+import {addone, addoneAsync} from '../../redux/actions'
 
 class App extends React.Component {
 
-  changeAAAHandler = (e)=> {
+  componentDidMount(){
+    this.props.addoneAsync("async message here")
+  }
 
-    this.props.addone()
+  changeAAAHandler = (e)=> {
+    this.props.addone("message!")
   }
 
 
   render() {
 
-
     const {whatever} = this.props
-
-
-
 
     return (
       <div>
-
-
         <Jumbotron fluid>
           <Container>
             <h1>{whatever}</h1>
@@ -35,11 +32,8 @@ class App extends React.Component {
             </p>
           </Container>
         </Jumbotron>
+
         <Bigarea></Bigarea>
-
-
-
-
 
       </div>
 
@@ -49,5 +43,5 @@ class App extends React.Component {
 
 export default connect(
   state => ({whatever:state.whatever}),
-  {addone}
+  {addone,addoneAsync}
 )(App);

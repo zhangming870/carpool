@@ -8,7 +8,7 @@ export function addOne(state=initstate, action){
     switch (action.type) {
         case ADD_ONE:
             
-            return {whatever:"one added"};
+            return {whatever:action.data};
     
         default:
             return state;
